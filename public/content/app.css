@@ -1,0 +1,293 @@
+/* Dzina Butko ID 301215947  Assignment Date  08/02/2021*/
+
+/* custom css goes here */
+
+/* Added color underline hover  in the navbar*/
+.navbar .navbar-nav .nav-link:hover {
+    color: #FFADF0;
+  }
+  @media only screen and (min-width: 960px) {
+    .navbar .navbar-nav .nav-link {
+      padding: 0.5em 0.5em;
+    }
+    .navbar {
+      padding: 1;
+    }
+    .navbar .navbar-brand {
+      padding: 0 1em;
+    }
+  }
+  .navbar .navbar-nav .nav-link {
+    position: relative;
+  }
+  .navbar .navbar-nav .nav-link::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background-color: #FFADF0;
+    color: transparent;
+    width: 0%;
+    content: '';
+    height: 3px;
+    transition: all 0.5s;
+  }
+  .navbar .navbar-nav .nav-link:hover::after {
+    width: 100%;
+ 
+  }
+
+  
+.social-icon {
+  margin: 20px 10px;
+}
+
+@media (max-width: 1028px) {
+
+  #title {
+    text-align: center;
+  }
+
+  .title-image {
+    position: static;
+    transform: rotate(0);
+  }
+}
+
+/* CSS Style for the form in the section "Contact me" */
+
+#contactme .text-fields {
+  display: grid;
+  grid-template-areas: 'name email' 'subject phone' 'message message';
+  grid-gap: 1.2rem;
+  margin-bottom: 1.2rem; }
+  #contactme .text-fields .name-input {
+    grid-area: name; }
+  #contactme .text-fields .subject-input {
+    grid-area: subject; }
+  #contactme .text-fields .email-input {
+    grid-area: email; }
+  #contactme .text-fields .phone-input {
+    grid-area: phone; }
+  #contactme .text-fields .message-input {
+    grid-area: message;
+    height: 100px; }
+  #contactme .text-fields .text-input {
+    padding: .5rem 1rem; }
+
+#contactme 
+button[type='submit'] {
+  width: 30%; 
+  height: 80px;
+}
+
+.btn-custom {
+  background-color: #D3DEDC;
+  border-color: rgb(167, 233, 245);
+  color: #212529;
+}
+
+/* Background color for the tab "Contact me" section "Email" */
+
+#email {
+  margin-top: 0%;
+  background: linear-gradient(135deg
+, rgb(253, 233, 221), rgb(236, 225, 240));
+    background-image: linear-gradient(
+135deg
+, rgb(253, 233, 221), rgb(236, 225, 240));
+    background-position-x: initial;
+    background-position-y: initial;
+    background-size: initial;
+    background-repeat-x: initial;
+    background-repeat-y: initial;
+    background-attachment: initial;
+    background-origin: initial;
+    background-clip: initial;
+    background-color: initial;
+  width: 100%;
+  height: 500px;
+}
+
+/* Background color for the tab "Contact me" section "Form" */
+
+#contactme {
+  background-color: linear-gradient(
+    135deg
+    , rgb(232, 219, 252), rgb(248, 249, 210));
+        background-image: linear-gradient(
+    135deg
+    , rgb(232, 219, 252), rgb(248, 249, 210));
+        background-position-x: initial;
+        background-position-y: initial;
+        background-size: initial;
+        background-repeat-x: initial;
+        background-repeat-y: initial;
+        background-attachment: initial;
+        background-origin: initial;
+        background-clip: initial;
+        background-color: initial;;
+ 
+  
+}
+
+/* Create background color for the tab "About Me" */ 
+
+#aboutme {
+  width: 100%;
+  height: 1000px;
+  display: block;
+  background-color: linear-gradient(
+    135deg
+    , rgb(244, 220, 208), rgb(170, 201, 206));
+        background-image: linear-gradient(
+    135deg
+    , rgb(244, 220, 208), rgb(170, 201, 206));
+        background-position-x: initial;
+        background-position-y: initial;
+        background-size: initial;
+        background-repeat-x: initial;
+        background-repeat-y: initial;
+        background-attachment: initial;
+        background-origin: initial;
+        background-clip: initial;
+        background-color: initial;;
+}
+
+/* Background color for the tab "Home" */
+
+#home {
+  width: 100%;
+  height: 1200px;
+  
+  
+  background: linear-gradient(
+    135deg
+    , rgb(228, 254, 246), rgb(255, 233, 251));
+        background-image: linear-gradient(
+    135deg
+    , rgb(228, 254, 246), rgb(255, 233, 251));
+        background-position-x: initial;
+        background-position-y: initial;
+        background-size: initial;
+        background-repeat-x: initial;
+        background-repeat-y: initial;
+        background-attachment: initial;
+        background-origin: initial;
+        background-clip: initial;
+        background-color: initial;
+}
+
+
+/* Background color for the card in the tab "Home */
+
+#card-1{
+  background-color: linear-gradient(
+    135deg
+    , rgb(232, 219, 252), rgb(248, 249, 210));
+        background-image: linear-gradient(
+    135deg
+    , rgb(232, 219, 252), rgb(248, 249, 210));
+        background-position-x: initial;
+        background-position-y: initial;
+        background-size: initial;
+        background-repeat-x: initial;
+        background-repeat-y: initial;
+        background-attachment: initial;
+        background-origin: initial;
+        background-clip: initial;
+        background-color: initial;
+}
+
+
+/* Create color link for the tab "Home" */
+
+#home a {
+  color: #FFA1C9;
+  text-decoration: none;
+}
+
+/* Create color link for the tab "About Me" */
+
+#aboutme a {
+  color: #FFA1C9;
+  text-decoration: none;
+}
+
+/* Create background color for the tab "Projects" */
+
+#projects {
+  width: 100%;
+  height: 800px;
+  background-color:linear-gradient(
+  135deg, rgb(197, 208, 226), rgb(244, 246, 249));
+    background-image: linear-gradient(
+135deg
+, rgb(197, 208, 226), rgb(244, 246, 249));
+    background-position-x: initial;
+    background-position-y: initial;
+    background-size: initial;
+    background-repeat-x: initial;
+    background-repeat-y: initial;
+    background-attachment: initial;
+    background-origin: initial;
+    background-clip: initial;
+    background-color: initial;
+}
+
+.card.mt-3 {
+  margin: 30px;
+  padding: 30px;
+}
+.card-img-top {
+  margin: 20px;
+  padding: 40px;
+}
+
+
+/* Create background color for the tab "Services" */ 
+
+#services {
+  width: 110%;
+  height: 1000px;
+  background-color: linear-gradient(
+    135deg
+    , rgb(228, 254, 246), rgb(255, 233, 251));
+        background-image: linear-gradient(
+    135deg
+    , rgb(228, 254, 246), rgb(255, 233, 251));
+        background-position-x: initial;
+        background-position-y: initial;
+        background-size: initial;
+        background-repeat-x: initial;
+        background-repeat-y: initial;
+        background-attachment: initial;
+        background-origin: initial;
+        background-clip: initial;
+        background-color: initial;
+}
+
+ /* Change color for the text in the section "Services" */
+
+.card-title {
+  color: #48c2f9;
+}
+
+/* Change color for the envelop */ 
+
+.fas.fa-envelope.mt-4.fa-2x {
+  color: #FFA1C9;
+}
+
+
+/* Footer Section */
+
+footer {
+  padding: 5px;
+  text-align: center;
+  font-size: 1rem;
+  color: #323232;
+  line-height: 1.0em;
+  background-color: #c5f8ef;
+}
