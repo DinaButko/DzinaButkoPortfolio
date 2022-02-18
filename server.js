@@ -4,8 +4,8 @@
  * Module dependencies.
  */
 
-var app = require('./app');
-var debug = require('debug')('dzinabutkowebsite:server');
+var app = require('./server/config/app'); 
+var debug = require('debug')('dzinabutkoassignment2(ID301215947):server');
 var http = require('http');
 
 /**
