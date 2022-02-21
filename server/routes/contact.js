@@ -26,7 +26,7 @@ router.get('/', (req,res,next) => {
     });
 });
 
-/* GET route for the displaying Athe dd Contacts list page - CREATE operation */
+/* GET route for the displaying the Add Contacts list page - CREATE operation */
 router.get('/add', (req, res, next) => {
     res.render('contact/add', {title: 'Add Contact'}) 
 
@@ -38,10 +38,11 @@ router.get('/add', (req, res, next) => {
 router.post('/add', (req, res, next) => {
     let newContact = Contact({
         "name": req.body.name,
-        "phone": req.body.number,
+        "number": req.body.number,
         "email": req.body.email
 
     });
+
 Contact.create(newContact, (err, Contact) => {
     if(err)
     {
@@ -77,17 +78,17 @@ router.get('/edit/:id', (req, res, next) => {
 
 
 /* POST route for the processing the  Edit Contacts list page - UPDATE operation */
-router.post('/add', (req, res, next) => {
+router.post('/edit/:id', (req, res, next) => {
  let id = req.params.id
 
  let updateContact = Contact({
-     "_id": id, 
+    "_id": id, 
     "name": req.body.name,
-    "phone": req.body.number,
+    "number": req.body.number,
     "email": req.body.email
  });
 
- Contact.updateOne({_id: id}, updateCpntact, (err) => {
+ Contact.updateOne({_id: id}, updateContact, (err) => {
      if(err)
      {
          console.log(err);
