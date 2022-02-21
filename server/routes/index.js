@@ -1,33 +1,27 @@
 /* Dzina Butko ID 301215947  Assignment Date  08/02/2021*/
 
+let express = require('express');
+let router = express.Router();
 
-var express = require('express');
-var router = express.Router();
+let indexController = require('../controllers/index');
 
 /* GET Home page. */
-router.get('/home', function(req, res, next) {
-  res.render('index', { title: 'Home',});
-});
+router.get('/', indexController.displayHomePage);
+
+/* GET Home page. */
+router.get('/home', indexController.displayHomePage);
 
 /* GET About Me page. */
-router.get('/about', function(req, res, next) {
-  res.render('about', { title: 'About Me',});
-});
+router.get('/about', indexController.displayAboutPage);
 
 /* GET Projects page. */
-router.get('/projects', function(req, res, next) {
-  res.render('projects', { title: 'Projects',});
-});
+router.get('/projects', indexController.displayProjectsPage);
 
 /* GET Services. */
-router.get('/services', function(req, res, next) {
-  res.render('services', { title: 'Services',});
-});
+router.get('/services', indexController.displayServicesPage);
 
 /* GET Contact Me page. */
-router.get('/contact', function(req, res, next) {
-  res.render('contact', { title: 'Contact Me',});
-});
+router.get('/contact', indexController.displayContactPage);
 
 
 

@@ -4,122 +4,31 @@ let mongoose = require('mongoose');
 
 
 //connect to our Contact model
-
 let Contact = require('../models/contact');
 
+let contactController = require('../controllers/contact');
 
 /* GET route for the contacts list page - READ operation */
-
-router.get('/', (req,res,next) => {
-    Contact.find((err, contactList) => {
-        if(err)
-        {
-            return console.error(err);
-        }
-        else
-        {
-            //console.log(ContactList);
-           
-          res.render('contact/list', {title: 'Contact List', ContactList: contactList}) 
-
-        }
-    });
-});
+router.get('/', contactController.displayContactList);
 
 /* GET route for the displaying the Add Contacts list page - CREATE operation */
-router.get('/add', (req, res, next) => {
-    res.render('contact/add', {title: 'Add Contact'}) 
-
-});
+router.get('/add', contactController.displayAddPage);
 
 
 /* POST route for the processing the  Add Contacts list page - CREATE operation */
 
-router.post('/add', (req, res, next) => {
-    let newContact = Contact({
-        "name": req.body.name,
-        "number": req.body.number,
-        "email": req.body.email
-
-    });
-
-Contact.create(newContact, (err, Contact) => {
-    if(err)
-    {
-        console.log(err);
-        res.end(err);
-    }
-    else{
-        //refresh the contact list
-        res.redirect('/contact-list');
-    }
-})
-});
+router.post('/add', contactController.processAddPage);
 
 
 /* GET route for the displaying the  Edit Contacts list page - UPDATE operation */
-router.get('/edit/:id', (req, res, next) => {
-    let id = req.params.id;
-
-    Contact.findById(id, (err, contactToEdit) => {
-        if (err)
-        {
-                console.log(err);
-                res.end(err);
-        }
-        else 
-        {
-                    //show the edit view
-             res.render('contact/edit', {title: 'Edit Contact', contact: contactToEdit})
-        }
-    });
-
-});
+router.get('/edit/:id', contactController.displayEditpage);
 
 
 /* POST route for the processing the  Edit Contacts list page - UPDATE operation */
-router.post('/edit/:id', (req, res, next) => {
- let id = req.params.id
-
- let updateContact = Contact({
-    "_id": id, 
-    "name": req.body.name,
-    "number": req.body.number,
-    "email": req.body.email
- });
-
- Contact.updateOne({_id: id}, updateContact, (err) => {
-     if(err)
-     {
-         console.log(err);
-         res.end(err);
-     }
-     else 
-     {
-          //refresh the contact list
-        res.redirect('/contact-list');
-     }
-
- });
-});   
+router.post('/edit/:id', contactController.processEditPage);
 
 /* GET to perform contacts deletion - DELETE operation */
-router.get('/delete/:id', (req, res, next) => {
-    let id = req.params.id;
-    Contact.remove({_id: id}, (err) => {
-        if(err)
-        {
-            console.log(err);
-            res.end(err);
-        }
-        else 
-        {
-             //refresh the contact list
-           res.redirect('/contact-list');
-        }
-    });
-
-});
+router.get('/delete/:id', contactController.performDeletePage);
 
 
 module.exports = router;
