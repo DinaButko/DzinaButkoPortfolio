@@ -17,14 +17,14 @@ module.exports.displayContactList = (req,res,next) => {
         {
             //console.log(ContactList);
            
-          res.render('contact/list', {title: 'Contact List', ContactList: contactList}) 
+            res.render('contact/list', { title: 'Contact List', ContactList: contactList,displayName: req.user ? req.user.displayName : ""  });
 
         }
     });
 }
 
 module.exports.displayAddPage = (req, res, next) => {
-    res.render('contact/add', {title: 'Add Contact'}) 
+    res.render('contact/add',{title: 'Add a Contact ',displayName: req.user ? req.user.displayName : "" });
 
 }
 
@@ -62,14 +62,14 @@ module.exports.displayEditpage = (req, res, next) => {
         else 
         {
                     //show the edit view
-             res.render('contact/edit', {title: 'Edit Contact', contact: contactToEdit})
+                    res.render('contact/edit',{title: 'Edit a Contact ', contact: contactToEdit,displayName: req.user ? req.user.displayName : "" });
         }
     });
 
 }
 
 module.exports.processEditPage = (req, res, next) => {
-    let id = req.params.id
+    let id = req.params.id;
    
     let updateContact = Contact({
        "_id": id, 

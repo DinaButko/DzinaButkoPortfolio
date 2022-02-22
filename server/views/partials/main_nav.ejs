@@ -11,26 +11,63 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="/home">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/about">About Me</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/projects">Projects</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/services">Services</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/contact">Contact Me</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/contact-list">Business Contacts List</a>
-          </li>
-        </ul>
-        
-      </div>
-    </div>
-  </nav> 
+          <% if (title == "Home"){ %>
+            <li class="nav-item active">
+            <% } else  { %>
+            <li class="nav-item">
+            <% } %>
+              <a class="nav-link" href="/home"> Home </a>
+            </li>
+      
+            <% if (title == "About") { %>
+            <li class="nav-item active">
+            <% } else  { %>
+            <li class="nav-item">
+            <% } %>
+              <a class="nav-link" href="/about">About </a>
+            </li>
+      
+            <% if (title == "Projects") { %>
+            <li class="nav-item active">
+            <% } else  { %>
+            <li class="nav-item">
+            <% } %>
+              <a class="nav-link" href="/projects">Projects </a>
+            </li>
+      
+            <% if (title == "Services") { %>
+            <li class="nav-item active">
+            <% } else  { %>
+            <li class="nav-item">
+            <% } %>
+              <a class="nav-link" href="/services"><i></i> Services </a>
+            </li>
+      
+            <% if (title == "Contacts") { %>
+            <li class="nav-item active">
+            <% } else  { %>
+            <li class="nav-item">
+            <% } %>
+              <a class="nav-link" href="/contact-list">Contacts </a>
+            </li>
+      
+            <% if (title == "Contact Me") { %>
+            <li class="nav-item active">
+            <% } else  { %>
+            <li class="nav-item">
+            <% } %>
+              <a class="nav-link" href="/contact"> Contact Me </a>
+            </li>
+      
+            <% if(typeof displayName == 'string' && displayName) { %>
+              <li class="navbar-text"><i class="fas fa-lg fa-user"></i> Welcome, <%= displayName %></li>
+              <li class="nav-item"><a href="/logout" class="nav-link">
+                <i class="fas fa-lg fa-sign-out-alt"></i> Logout</a></li>
+            <% } else { %>
+              <li class="nav-item"><a href="/login" class="nav-link">
+                <i class="fas fa-lg fa-sign-in-alt"></i> Login</a></li>
+            <% } %>
+      
+      
+        </div>
+      </nav>
