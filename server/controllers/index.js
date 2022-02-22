@@ -3,28 +3,30 @@ let router = express.Router();
 let mongoose = require('mongoose');
 let passport = require('passport');
 
-//create the User model instance 
+
+
+// create the User Model instance
 let userModel = require('../models/user');
 let User = userModel.User; // alias
 
 module.exports.displayHomePage = (req, res, next) => {
-    res.render('index', { title: 'Home' ,displayName: req.user ? req.user.displayName : " "});
+    res.render('', {title: 'Home', displayName: req.user ? req.user.displayName : ''});
 }
 
 module.exports.displayAboutPage = (req, res, next) => {
-    res.render('about', { title: 'About' ,displayName: req.user ? req.user.displayName : " "});
+    res.render('about', { title: 'About', displayName: req.user ? req.user.displayName : ''});
 }
 
 module.exports.displayProjectsPage = (req, res, next) => {
-    res.render('projects', { title: 'Projects' ,displayName: req.user ? req.user.displayName : " "});
+    res.render('projects', { title: 'Projects', displayName: req.user ? req.user.displayName : ''});
 }
 
 module.exports.displayServicesPage = (req, res, next) => {
-    res.render('services', { title: 'Services' ,displayName: req.user ? req.user.displayName : " "});
+    res.render('services', { title: 'Services', displayName: req.user ? req.user.displayName : ''});
 }
 
 module.exports.displayContactPage = (req, res, next) => {
-    res.render('contact', { title: 'Contact Me' ,displayName: req.user ? req.user.displayName : " "});
+    res.render('contactme', { title: 'Contact Me', displayName: req.user ? req.user.displayName : ''});
 }
 
 module.exports.displayLoginPage = (req, res, next) => {
@@ -35,8 +37,8 @@ module.exports.displayLoginPage = (req, res, next) => {
         {
            title: "Login",
            messages: req.flash('loginMessage'),
-           displayName: req.user ? req.user.displayName : " " 
-        });
+           displayName: req.user ? req.user.displayName : '' 
+        })
     }
     else
     {
@@ -64,7 +66,6 @@ module.exports.processLoginPage = (req, res, next) => {
             {
                 return next(err);
             }
-
             return res.redirect('/contact-list');
         });
     })(req, res, next);
@@ -78,7 +79,7 @@ module.exports.displayRegisterPage = (req, res, next) => {
         {
             title: 'Register',
             messages: req.flash('registerMessage'),
-            displayName: req.user ? req.user.displayName : " "
+            displayName: req.user ? req.user.displayName : ''
         });
     }
     else
@@ -112,7 +113,7 @@ module.exports.processRegisterPage = (req, res, next) => {
             {
                 title: 'Register',
                 messages: req.flash('registerMessage'),
-                displayName: req.user ? req.user.displayName : " "
+                displayName: req.user ? req.user.displayName : ''
             });
         }
         else
@@ -120,6 +121,10 @@ module.exports.processRegisterPage = (req, res, next) => {
             // if no error exists, then registration is successful
 
             // redirect the user and authenticate them
+
+            /* TODO - Getting Ready to convert to API
+            res.json({success: true, msg: 'User Registered Successfully!'});
+            */
 
             return passport.authenticate('local')(req, res, () => {
                 res.redirect('/contact-list')

@@ -21,7 +21,7 @@ router.get('/projects', indexController.displayProjectsPage);
 router.get('/services', indexController.displayServicesPage);
 
 /* GET Contact Me page. */
-router.get('/contact', indexController.displayContactPage);
+router.get('/contactme', indexController.displayContactPage);
 
 /* GET Route for displaying the Login page */
 router.get('/login', indexController.displayLoginPage);
