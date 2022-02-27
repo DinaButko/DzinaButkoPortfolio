@@ -21,7 +21,7 @@
             
             <script src="https://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
             
-            <table class="table table-striped sortable">
+            <table class="table table-bordered table-striped sortable">
         
                 
                 <!-- Header Row-->
@@ -32,8 +32,8 @@
                         <th class="text-center col-2">Number</th>
                         <th class="text-center col-2">Email</th>
                         <% if(typeof displayName == 'string' && displayName) { %>
-                        <th class="text-center col-1"></th>
-                        <th class="text-center col-1"></th>
+                        <th class="text-center col-2"></th>
+                        <th class="text-center col-2"></th>
                         <% } %>
                     </tr>
            
@@ -43,14 +43,14 @@
                 <% for(let count =0;count<ContactList.length;count++){ %>
                     <tr>
                         <td class="text-center col-2"><%= ContactList[count].name %></td>
-                        <td class="text-centercol-2"><%= ContactList[count].number %></td>
-                        <td class="text-centercol-3"><%= ContactList[count].email %></td>
+                        <td class="text-center col-2"><%= ContactList[count].number %></td>
+                        <td class="text-center col-2"><%= ContactList[count].email %></td>
                         <% if(typeof displayName == 'string' && displayName) { %>
-                        <td class="text-center col-1">
+                        <td class="text-center col-2">
                             <a href="/business-contact-list/edit/<%=ContactList[count]._id %>" class="btn btn-primary btn-sm">
                             <i class="fas fa-pencil-alt"></i>Edit</a>
                         </td>
-                        <td class="text-center col-1">
+                        <td class="text-center col-2">
                             <a href="/business-contact-list/delete/<%=ContactList[count]._id%> " class="btn btn-danger btn-sm">
                             <i class="fas fa-trash-alt"></i>Delete</a>
                             </td>
