@@ -1,6 +1,13 @@
 <%- include ../partials/header.ejs %>
 <%- include ../partials/main_nav.ejs %>
 
+<section id="star">
+    <br>
+    <br>
+    <iframe src="https://giphy.com/embed/UuZgUt9mvHWQMo6fxI" width="300" height="300" class="giphy-fluid" class="rounded float-start"allowFullScreen></iframe>
+    </section>
+
+<section id="businesscontacts">
 <main class="container">
     <!-- Message Area -->
     <%if(messages.length > 0) {%>
@@ -8,7 +15,7 @@
             <%= messages %>
         </div>
     <% } %>
-
+<br>
     <div class="row">
         <div class="offset-md-4 col-md-4">
             <h1>Please Login</h1>
@@ -20,15 +27,17 @@
                     id="username" required autofocus>
                 </fieldset>
 
+                <br>
                 <fieldset class="form-group">
                     <label for="password">Password: </label>
                     <input type="password" class="form-control"
                     name="password" placeholder="Enter password"
                     id="password" required>
+                    <br>
                     or
-                    <a href="/register">Register Here</a>
+                    <a href="/register" style="color:#84DFFF">Register Here</a>
                 </fieldset>
-
+                <br>
                 <fieldset class="form-group text-right">
                     <input type="submit" class="btn btn-success" value="Login">
                     <a href="/">
@@ -37,9 +46,16 @@
                 </fieldset>
 
             </form>
+            <section id="starpinkflight">
+                <br>
+                <br>
+                <section id="starpinkflight">
+                    <iframe src="https://giphy.com/embed/g0mUVAxP0EwaFuZVCW" width="300" height="300" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+                    </section>
+                </section>
         </div>
     </div>
-
+</section>
 </main>
 
 
