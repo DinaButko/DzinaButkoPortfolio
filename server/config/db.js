@@ -1,3 +1,5 @@
+//Dzina Butko ID 301215947  Assignment 2 Date  05/03/2021
+
 module.exports =
 {
 //"URI" : "mongodb://127.0.0.1/contact_list"

@@ -1,4 +1,4 @@
-/* Dzina Butko ID 301215947  Assignment Date  08/02/2021*/
+/*Dzina Butko ID 301215947  Assignment 2 Date  05/03/2021*/
 
 /* custom css goes here */
 
@@ -292,6 +292,7 @@ footer {
   background-color: #c5f8ef;
 }
 
+
 #businesscontacts {
   width: 1300px;
   height: 1000px;
@@ -309,26 +310,31 @@ footer {
   height: 100%;
 }
 
+
+/* Change color for the h1 */ 
 h1 {
   color:#84DFFF;
 }
 
 
+/* Create color for the button "Login" */ 
 .btn.btn-success {
   background-color: #96CEB4;
   margin-right: 30px;
   
 }
 
+/* Create color for the button "Cancel" */ 
 .btn.btn-warning {
   background-color: #FFEEAD;
 }
 
-
+/* Create color for the button "Edit" */ 
 .btn.btn-primary {
   background-color: #548CFF;
 }
 
+/* Create color for the button "Delete" */ 
 .btn.btn-danger {
   background-color: #FF5959 ;
 }
@@ -390,7 +396,7 @@ a {
   height:50px;
 }
 
-/* Sortable tables */
+/* Sortable tables create the background color */
 table.sortable thead {
   background-color:#DFF6FF;
   color:#666666;

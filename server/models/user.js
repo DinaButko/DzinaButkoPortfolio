@@ -1,3 +1,5 @@
+//Dzina Butko ID 301215947  Assignment 2 Date  05/03/2021
+
 // require modules for the User Model
 let mongoose = require('mongoose');
 let passportLocalMongoose = require('passport-local-mongoose');
