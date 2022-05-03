@@ -13,7 +13,8 @@ Dzina Butko ID 301215947 Course COMP229 Web Application Development
 
 
 💎 Demo:
-![one](https://user-images.githubusercontent.com/97703238/166554405-4e54840c-ceb3-4d86-88cb-d997c68ed844.jpg)
+
+![1](https://user-images.githubusercontent.com/97703238/166554908-d72a6542-2f80-43ba-8717-c07f1279066f.jpg)
 
 ![two](https://user-images.githubusercontent.com/97703238/166554384-edec6a0c-a204-43df-a0ab-76954d0e5cd0.jpg)
 
